@@ -1,149 +1,132 @@
-# DSCommerce System – Spring Boot E-Commerce Backend
+# DSCommerce API
 
-A professional backend application built with **Java** and **Spring Boot**, implementing a simplified e-commerce domain model with ORM mapping, relational database integration, and clean layered architecture.
+## Sobre o projeto
 
-This project demonstrates real-world backend concepts including domain modeling, entity relationships, JPA/Hibernate integration, and structured service architecture.
+API REST desenvolvida com Java e Spring Boot para simular um sistema de e-commerce, incluindo gerenciamento de usuários, produtos, pedidos e pagamentos.
 
----
-
-## 🚀 Features
-
-- Domain-driven design for e-commerce systems
-- User, Order, Product, and Payment modeling
-- Entity relationships:
-  - Many-to-One
-  - One-to-One
-  - Many-to-Many
-  - Association class (composite key)
-- JPA and Hibernate ORM mapping
-- H2 in-memory database for development
-- Data seeding
-- Clean layered architecture (Controller → Service → Repository)
+O projeto foi construído com foco em boas práticas de arquitetura backend, organização em camadas e aplicação de conceitos de orientação a objetos, Clean Code e SOLID.
 
 ---
 
-## 🛠 Technologies Used
+## Tecnologias utilizadas
 
-- Java 11+
-- Spring Boot
-- Spring Data JPA
-- Hibernate
-- H2 Database
-- Maven
-
----
-
-## 📁 Project Structure
-
-```
-src/
-└── main/
-    └── java/
-        └── com.devsuperior.dscommerce
-            ├── controllers
-            ├── services
-            ├── repositories
-            ├── entities
-            ├── dto
-            └── config
-```
-
-The project follows a layered architecture to ensure:
-
-- Separation of concerns  
-- Maintainability  
-- Scalability  
-- Clean code organization  
+* Java
+* Spring Boot
+* Spring Data JPA
+* Hibernate
+* Banco de dados H2
+* Maven
 
 ---
 
-## 🗃 Domain Model Overview
+## Conceitos aplicados
 
-The system models a simplified e-commerce environment including:
+* Arquitetura em camadas (Controller, Service, Repository)
+* Padrão DTO para transferência de dados
+* Tratamento de exceções customizadas
+* Validação de dados com Bean Validation
+* Relacionamentos JPA:
 
-- Users
-- Orders
-- Products
-- Categories
-- Payments
-
-Relationships implemented:
-
-- User → Orders (One-to-Many)
-- Order → Payment (One-to-One)
-- Product ↔ Category (Many-to-Many)
-- Order ↔ Product (Many-to-Many with association class)
+  * OneToMany
+  * ManyToOne
+  * ManyToMany
+* Boas práticas de Clean Code e SOLID
 
 ---
 
-## ⚙️ How to Run the Project
+## Modelo de domínio
 
-### 1️⃣ Clone the repository
+O sistema simula um e-commerce com as seguintes entidades:
+
+* User
+* Order
+* Product
+* Category
+* Payment
+
+Relacionamentos complexos foram implementados utilizando JPA/Hibernate, garantindo consistência e integridade dos dados.
+
+---
+
+## Endpoints principais
+
+### Produtos
+
+* GET /products
+* GET /products/{id}
+
+### Usuários
+
+* GET /users
+* GET /users/{id}
+
+### Pedidos
+
+* GET /orders
+* GET /orders/{id}
+
+---
+
+## Como executar o projeto
 
 ```bash
-git clone https://github.com/RODR1GU3S/Project---DSCommerce-System
+# Clonar repositório
+git clone https://github.com/RODR1GU3S/dscommerce-api
+
+# Entrar na pasta
+cd dscommerce-api
+
+# Executar o projeto
+./mvnw spring-boot:run
 ```
 
-### 2️⃣ Navigate to the project folder
-
-```bash
-cd Project---DSCommerce-System
-```
-
-### 3️⃣ Run the application
-
-```bash
-mvn spring-boot:run
-```
-
-The application will start at:
-
-```
+A aplicação estará disponível em:
 http://localhost:8080
-```
 
 ---
 
-## 🗄 H2 Database Console
+## Banco de dados H2
 
-Since the project uses H2 for development, you can access the database console:
-
-```
+Acesse o console do banco em:
 http://localhost:8080/h2-console
-```
-
-Default configuration:
-
-- JDBC URL: `jdbc:h2:mem:testdb`
-- Username: `sa`
-- Password: (leave blank)
 
 ---
 
-## 🧠 Key Backend Concepts Demonstrated
+## Documentação
 
-- Relational database modeling
-- ORM with JPA/Hibernate
-- Entity mapping strategies
-- Composite primary keys
-- Association class implementation
-- Clean service-layer separation
-- Repository abstraction with Spring Data JPA
+Você pode adicionar aqui:
+
+* Swagger/OpenAPI (recomendado)
+* Prints dos endpoints
+* Coleções do Postman
 
 ---
 
-## 🎯 Purpose of This Project
+## Objetivo do projeto
 
-This project was developed to practice and demonstrate backend system modeling for an e-commerce domain, focusing on:
-
-- Correct entity relationship mapping
-- Clean architectural patterns
-- Real-world business logic representation
-- Scalable backend design
+Este projeto foi desenvolvido como parte da especialização em backend Java, com foco na construção de APIs REST robustas e bem estruturadas, simulando cenários reais de negócio.
 
 ---
 
-## 👨‍💻 Author
+## Contexto profissional
 
-Ronaldo Rodrigues  
-Backend Java & Spring Boot Developer
+O projeto também reflete experiência prática com análise de regras de negócio, adquirida ao longo de mais de 20 anos em ambiente corporativo, garantindo maior preocupação com consistência, validação e integridade dos dados.
+
+---
+
+## Melhorias futuras
+
+* Implementação de autenticação com JWT
+* Integração com PostgreSQL
+* Documentação com Swagger/OpenAPI
+* Deploy em ambiente cloud
+
+---
+
+## Autor
+
+Ronaldo Rodrigues
+Desenvolvedor Backend Java
+
+* LinkedIn: https://www.linkedin.com/in/ronaldo-rodr1gu3s
+* GitHub: https://github.com/RODR1GU3S
